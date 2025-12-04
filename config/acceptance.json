@@ -1,0 +1,21 @@
+{
+  "acceptance": {
+    "primary": {
+      "maxDrawdownPct": { "XAUUSD": 6.0, "EURUSD": 5.0, "US30": 7.0 },
+      "profitFactorMin": { "XAUUSD": 1.5, "EURUSD": 1.4, "US30": 1.6 },
+      "rocMonthlyMinPct": { "consolidated": 2.5 }
+    },
+    "secondary": {
+      "observedLeverageMax": 9.0,
+      "perAssetCapLots": { "XAUUSD": 3.0, "EURUSD": 4.0, "US30": 2.0 },
+      "maxExposureUSD": 250000,
+      "dailyLossLimitUSD": 5000,
+      "blackoutEnabled": true
+    }
+  },
+  "routes": [
+    { "source": "XAUUSD", "target": "XAUUSD.p", "contractMultiplier": 1.0, "digits": 3, "tickSize": 0.01, "volMin": 0.10, "volStep": 0.10, "enabled": true },
+    { "source": "EURUSD", "target": "EURUSD",   "contractMultiplier": 1.0, "digits": 5, "tickSize": 0.0001, "volMin": 0.01, "volStep": 0.01, "enabled": true },
+    { "source": "US30",   "target": "_DJI",     "contractMultiplier": 1.0, "digits": 1, "tickSize": 1.0,    "volMin": 1.0,  "volStep": 1.0,  "enabled": true }
+  ]
+}
